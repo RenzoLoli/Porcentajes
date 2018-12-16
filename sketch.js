@@ -1,7 +1,12 @@
 var boton = document.getElementById("boton");
 var caja = document.getElementById("numero");
 var paridad = document.getElementById("paridad");
+var frase = document.getElementById("lea");
 var precio = 0;
+var cont = 0;
+var i =0;
+
+var f = ["puto ", "el ", "que ", "lo ", "lea ", "jaaaaaaaaaaaaa ", "<br>pasa ", "el pack :V ", "okno xd"];
 
 function generarAleatorio() {
   
@@ -24,10 +29,27 @@ function generarAleatorio() {
 
   }
 
+  if(cont % 5 == 0 && cont > 0 && i < 9){
+
+      frase.style.color = getRandomColor();
+      frase.innerHTML += f[i];
+      i++;
+
+  }
+
   colorBoton(precio);
 
+  cont++;
 
+}
 
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 function colorBoton(precio){
